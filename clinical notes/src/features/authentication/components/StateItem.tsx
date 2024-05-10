@@ -18,12 +18,7 @@ const StateItem: React.FC<React.PropsWithChildren<StateItemProps>> = ({
 
   return (
     <StateItemWrapper>
-      <div
-        style={{ display: "flex", flex: 1 }}
-        className="text-xs text-gray-500"
-      >
-        {title}
-      </div>
+      <TitleWrapper className="text-xs text-gray-500">{title}</TitleWrapper>
       <Button title={value} onClick={handleOnClick} />
     </StateItemWrapper>
   );
@@ -35,6 +30,11 @@ const StateItemWrapper = styled.div`
   flex-direction: row;
   margin-bottom: 5px;
   align-items: center;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 export default StateItem;
