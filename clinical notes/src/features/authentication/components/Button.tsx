@@ -25,12 +25,9 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
         </Content>
       </button>
       {!!subLabel && (
-        <div
-          style={{ display: "flex", flex: 1 }}
-          className="text-xs text-gray-500"
-        >
+        <SubLabelWrapper className="text-xs text-gray-500">
           {subLabel}
-        </div>
+        </SubLabelWrapper>
       )}
     </ButtonWrapper>
   );
@@ -46,5 +43,9 @@ const ButtonWrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const SubLabelWrapper = styled.div`
+  display: flex;
+  flex: 1;
 `;
 export default Button;
