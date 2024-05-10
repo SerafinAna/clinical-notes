@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import NoteItem from "../components/Note/NoteItem";
 
@@ -207,13 +207,18 @@ const NotesScreen: React.FC = () => {
           setActiveIndex(activeIndex + 1);
           return;
         }
+        if (isExpanded && !isEditMode) {
+          updateStateItemValue(keyNumber - 1);
+          setIsExpanded(false);
+          setActiveIndex(activeIndex + 1);
+        }
 
-        updateStateItemValue(keyNumber - 1);
-        setIsExpanded(false);
-        setActiveIndex(activeIndex + 1);
         break;
       }
       case "0": {
+        const { stateItems = [], hasNumberChoice = false } =
+          noteItems[activeIndex];
+        if (!stateItems?.length && hasNumberChoice) return;
         setIsEditMode(true);
         break;
       }
