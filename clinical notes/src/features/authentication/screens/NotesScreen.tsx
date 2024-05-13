@@ -46,8 +46,8 @@ const NotesScreen: React.FC = () => {
       ];
       const notes: Note[] = [
         {
-          header: "Owner concerns",
-          value: "None",
+          header: "Mentation",
+          value: "BAR",
           navigationButtons: [navButtons[0], navButtons[1], navButtons[3]],
           stateItems: [
             {
@@ -70,17 +70,6 @@ const NotesScreen: React.FC = () => {
               value: 0,
               onClick: onStateButtonPress,
             },
-          ],
-        },
-        {
-          header: "Mentation",
-          value: "BAR",
-          hasNumberChoice: true,
-          navigationButtons: [
-            ...numberButtons,
-            navButtons[1],
-            navButtons[2],
-            navButtons[3],
           ],
         },
         {
