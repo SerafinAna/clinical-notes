@@ -2,7 +2,7 @@ import Button from "./Button";
 import styled from "styled-components";
 
 interface ButtonsProps {
-  buttons: ButtonType[];
+  buttons?: ButtonType[];
   isVisible: boolean;
 }
 
@@ -10,7 +10,7 @@ const Buttons: React.FC<React.PropsWithChildren<ButtonsProps>> = ({
   buttons,
   isVisible,
 }) => {
-  if (!isVisible) return null;
+  if (!isVisible || !buttons) return null;
   return (
     <ButtonsWrapper>
       {buttons.map((button) => {
